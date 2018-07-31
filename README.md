@@ -1,3 +1,8 @@
+## Simple TV series application
+
+This is a simple tv series application that pulls from TVMaze api. The application simply showcases and lists various tv shows and a brief description of the given show.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
