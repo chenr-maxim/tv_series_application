@@ -3,8 +3,11 @@ import Loader from '../../components/Loader';
 
 class SingleSeries extends Component {
 
-	state = {
-		show: null
+	constructor(props) {
+		super(props);
+		this.state = {
+			show: null
+		}
 	}
 
 	componentDidMount () {
@@ -16,7 +19,6 @@ class SingleSeries extends Component {
 
 	render() {
 		const { show } = this.state;
-		console.log(show);
 
  		return (
 			<div>
@@ -29,9 +31,7 @@ class SingleSeries extends Component {
 						<p> Premiered - {show.premiered} </p>
 						<p> Rating - {show.rating.average} </p>
 						<p> Summary - {show.summary} </p>
-						<p>
-							<img alt="Show" src={show.image.medium} />
-						</p>
+						<p> <img alt="Show" src={show.image.medium} /> </p>
 					</div>
 				}
 			</div>

@@ -4,7 +4,6 @@ import SeriesList from '../../components/SeriesList';
 import Loader from '../../components/Loader';
 
 class Series extends Component {
-
 	state = {
     series: [],
     seriesName: '',
@@ -12,7 +11,6 @@ class Series extends Component {
   }
 
   onSeriesInputChange = e => {
-
   	this.setState({ seriesName: e.target.value, isFetching: true });
 
   	fetch(`http://api.tvmaze.com/search/shows?q=${e.target.value}`)
