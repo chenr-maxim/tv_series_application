@@ -7,6 +7,7 @@ class Profile extends Component {
 		this.state = {
 			name:'',
 			password:'',
+			redirect: false
 		};
 
 		this.handleNameChange = this.handleNameChange.bind(this);
@@ -30,7 +31,7 @@ class Profile extends Component {
 
 		console.log(localStorage.getItem('name'));
 		console.log(localStorage.getItem('password'));
-
+		this.props.history.push("/app");
 	}
 
 	render() {
