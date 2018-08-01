@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Loader from '../../components/Loader';
 
+var favoriteSeries = [];
+
 class SingleSeries extends Component {
 
 	constructor(props) {
@@ -8,6 +10,16 @@ class SingleSeries extends Component {
 		this.state = {
 			show: null
 		}
+
+		this.handleClick = this.handleClick.bind(this);
+	}
+
+	handleClick() {
+		alert('Show was added!');
+		favoriteSeries.push(this.state.show.name);
+		localStorage.setItem('favoriteShow', JSON.stringify(favoriteSeries));
+		console.log(localStorage.getItem('favoriteShow'));
+
 	}
 
 	componentDidMount () {
@@ -31,6 +43,7 @@ class SingleSeries extends Component {
 						<p> Premiered - {show.premiered} </p>
 						<p> Rating - {show.rating.average} </p>
 						<p> Summary - {show.summary} </p>
+						<button onClick={this.handleClick}> Add to Favorites </button>
 						<p> <img alt="Show" src={show.image.medium} /> </p>
 					</div>
 				}

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import './index.css';
 
-class Profile extends Component {
+class Signup extends Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {
 			name:'',
 			password:'',
-			redirect: false
+			favoriteShows:[],
 		};
 
 		this.handleNameChange = this.handleNameChange.bind(this);
@@ -37,20 +38,22 @@ class Profile extends Component {
 	render() {
 
 		return(
-			<div>
+			<div className ="form-Box">
 				Enter Profile information here:
 				<div>
 					<form onSubmit={this.handleSubmit}>
+						<br />
 						<input name="name"value={this.state.name} type="text" onChange={this.handleNameChange}  placeholder="Name" required />
 						<input name="password" value={this.state.password} type="password" onChange={this.handlePasswordChange} placeholder="Password" required />
+						<br />
+						<br />
 						<input type="submit" value="Sign up" /> 
 					</form>
 				</div>
 			</div>
-
 		);
 	}
 }
 
-export default Profile;
+export default Signup;
 
