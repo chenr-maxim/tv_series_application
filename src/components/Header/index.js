@@ -1,28 +1,25 @@
-import React, { Component } from 'react';
-import Main from '../Main';
-import { createHashHistory } from 'history'
-import { Redirect } from 'react-router';
-import { BrowserRouter as Router } from 'react-router-dom';
-
-const history = createHashHistory();
+import React  from 'react';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Header extends React.Component {
-    constructor(props) {
-      super(props);
-
-      this.redirectToProfile = this.redirectToProfile.bind(this);
-    }
-
-    redirectToProfile(e) {
-      history.push('/profile');
-    }
 
     render() {
         return (
-          <header className="App-header">
-            <h1 className="App-title"> TV Series List </h1>
-            <button onClick={this.redirectToProfile}> View Profile </button>
-          </header>
+          <nav className="navbar navbar-inverse">
+              <ul className="nav nav-pills">
+                <div className="container-fluid">
+                  <div className="row">
+                    <div className="col-sm">
+                      <li role="presentation"><a href="/app"> TV Series List</a></li>
+                    </div>
+                    <div className="col-sm">
+                      <li role="presentation"><a href="/profile"> Profile </a></li>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+          </nav>
         );
     }
 }

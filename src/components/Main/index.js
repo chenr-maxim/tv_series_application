@@ -1,7 +1,5 @@
 import React from 'react';
-import { Switch, Route, browserHistory } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
-import history from './history';
+import { Switch, Route } from 'react-router-dom';
 import Series from '../../containers/Series';
 import Signup from '../../components/Signup';
 import Profile from '../../containers/Profile';
@@ -11,7 +9,6 @@ class Main extends React.Component {
 
 	render() {
 		return (
-			<Router history={history}>
 				<div>
 					<Switch>
 						<Route exact path="/" exact component={Signup} />
@@ -20,7 +17,6 @@ class Main extends React.Component {
 						<Route exact path="/series/:id" exact component={SingleSeries} />
 					</Switch>
 				</div>
-			</Router>
 		)
 	}
 };
