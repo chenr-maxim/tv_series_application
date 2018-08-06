@@ -1,30 +1,16 @@
 import React, { Component } from 'react';
-import { Route , withRouter} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from '../Main';
+import Header from '../Header';
 import './App.css';
 import 'whatwg-fetch';
 
 class App extends Component {
 
-constructor(props) {
-	super(props);
-
-	this.redirectToHome = this.redirectToHome.bind(this);
-}
-
-redirectToHome() {
-	this.props.history.push('/app');
-}
-
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title"> TV Series List </h1>
-        </header>
-        <div>
-        	<button onClick={this.redirectToHome.bind(this)}> Redirect to Home </button>
-        </div>
+        <Header />
         <Main />
       </div>
     );

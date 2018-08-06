@@ -19,6 +19,7 @@ class SingleSeries extends Component {
 		favoriteSeries.push(this.state.show.name);
 		localStorage.setItem('favoriteShow', JSON.stringify(favoriteSeries));
 		console.log(localStorage.getItem('favoriteShow'));
+		this.props.history.push('/app');
 
 	}
 
