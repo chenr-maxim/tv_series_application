@@ -15,9 +15,7 @@ class Profile extends Component {
 	}
 
 	displayShows() {
-
 		let displayArray = [];
-
 		for(let i = 0; i < localStorage.length; i++) {
 			displayArray[i] = (localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
 		}
@@ -31,7 +29,7 @@ class Profile extends Component {
 			<div>
 				{ this.displayShows() }
 			</div>
-		);	
+		);
 	}
 }
 

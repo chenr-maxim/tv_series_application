@@ -8,17 +8,42 @@ class SingleSeries extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			show: null
-		}
+			show: null,
+			showName: "",
+			favoriteList: []
+		};
 
+		this.addToFavorites = this.addToFavorites.bind(this);
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-	handleClick() {
-		alert('Show was added!');
-		favoriteSeries.push(this.state.show.name);
-		localStorage.setItem('favoriteShow', JSON.stringify(favoriteSeries));
-		console.log(localStorage.getItem('favoriteShow'));
+	addToFavorites(show2) {
+
+		this.setState({[this.state.show]: show2})
+
+		const newFavoriteShow = {
+			show: show2,
+			showName: show2.name,
+		};
+
+		const favoritedList = [...this.state.favoriteList];
+		favoritedList.push(newFavoriteShow);
+
+		console.log('favorited list' + favoritedList);
+		console.log('this.state.favoriteList' + this.state.favoriteList);
+
+		this.setState({
+			favoritedList,
+			newFavoriteShow: ""
+		});
+
+		localStorage.setItem("favoriteList", JSON.stringify(favoritedList));
+		localStorage.setItem("newFavoriteShow","");
+	}
+
+	handleClick(show) {
+		this.addToFavorites(show);
+		console.log(this.state);
 		this.props.history.push('/app');
 
 	}
@@ -44,7 +69,7 @@ class SingleSeries extends Component {
 						<p> Premiered - {show.premiered} </p>
 						<p> Rating - {show.rating.average} </p>
 						<p> Summary - {show.summary} </p>
-						<button onClick={this.handleClick}> Add to Favorites </button>
+						<button onClick={() => this.addToFavorites(show)}> Add to Favorites </button>
 						<p> <img alt="Show" src={show.image.medium} /> </p>
 					</div>
 				}
