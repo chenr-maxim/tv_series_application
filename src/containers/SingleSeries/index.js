@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Loader from '../../components/Loader';
 
-var favoriteSeries = [];
-
 class SingleSeries extends Component {
 
 	constructor(props) {
@@ -17,28 +15,8 @@ class SingleSeries extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-	addToFavorites(show2) {
+	addToFavorites() {
 
-		this.setState({[this.state.show]: show2})
-
-		const newFavoriteShow = {
-			show: show2,
-			showName: show2.name,
-		};
-
-		const favoritedList = [...this.state.favoriteList];
-		favoritedList.push(newFavoriteShow);
-
-		console.log('favorited list' + favoritedList);
-		console.log('this.state.favoriteList' + this.state.favoriteList);
-
-		this.setState({
-			favoritedList,
-			newFavoriteShow: ""
-		});
-
-		localStorage.setItem("favoriteList", JSON.stringify(favoritedList));
-		localStorage.setItem("newFavoriteShow","");
 	}
 
 	handleClick(show) {
@@ -69,7 +47,7 @@ class SingleSeries extends Component {
 						<p> Premiered - {show.premiered} </p>
 						<p> Rating - {show.rating.average} </p>
 						<p> Summary - {show.summary} </p>
-						<button onClick={() => this.addToFavorites(show)}> Add to Favorites </button>
+						<p> <button onClick={() => this.addToFavorites()}> Add to Favorites </button> </p>
 						<p> <img alt="Show" src={show.image.medium} /> </p>
 					</div>
 				}
