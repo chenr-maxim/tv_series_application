@@ -8,7 +8,8 @@ class SingleSeries extends Component {
 		this.state = {
 			show: null,
 			showName: "",
-			favoriteList: []
+			favoriteList: [],
+			animeShow: null
 		};
 
 		this.addToFavorites = this.addToFavorites.bind(this);
