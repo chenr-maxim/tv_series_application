@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Intro from '../../components/Intro';
 import SeriesList from '../../components/SeriesList';
-import AnimeList from '../../components/AnimeList';
+//import AnimeList from '../../components/AnimeList';
 import Loader from '../../components/Loader';
 
 class Series extends Component {
@@ -46,7 +46,6 @@ class Series extends Component {
 					!isFetching && <SeriesList list={this.state.series} />
 				}
 
-			<AnimeList />
 			</div>
 		)
 	}

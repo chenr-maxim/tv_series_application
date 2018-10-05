@@ -6,6 +6,7 @@ const SeriesListItem = ({ series }) => (
 	<li>
 		<Link to={`/series/${series.show.id}`}>
 			{series.show.name}
+			<img alt="Show" src={series.show.image.medium}/>
 		</Link>
 	</li>
 )

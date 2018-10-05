@@ -8,19 +8,6 @@ class AnimeList extends Component {
 		animeShowName: ''
 	}
 
-	componentDidMount() {
-
-		this.setState({ animeShowName: e.target.value});
-
-
-		fetch(`http://api.jikan.moe/${e.target.value}/`)
-			.then(response => response.json())
-			.then(json => this.setState({ animeShow: json})
-			.catch(err => {
-				console.error('An error has occured',err);
-			}));
-	}
-
 	render() {
 		const { animeShow, animeShowName } = this.state;
 
